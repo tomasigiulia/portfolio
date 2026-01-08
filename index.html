@@ -22,22 +22,51 @@
             margin-bottom: 50px;
         }
 
-        img {
-            display: block;
+        /* Contenitore per GIF affiancate */
+        .gis-gifs {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
             margin: 20px 0;
+        }
+
+        .gis-gifs img {
+            flex: 1 1 48%;
             max-width: 100%;
             height: auto;
         }
 
+        /* Didascalia */
+        .caption {
+            text-align: center;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Immagine aggiuntiva */
+        .gis-image {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .gis-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Tour */
         .projects iframe {
             width: 100%;
-            height: 800px; /* maggiore altezza per tour panoramico */
+            height: 800px;
             border: 1px solid #ccc;
         }
 
         @media (max-width: 768px) {
+            .gis-gifs img {
+                flex: 1 1 100%;
+            }
             .projects iframe {
-                height: 500px; /* ridotto su mobile */
+                height: 500px;
             }
         }
     </style>
@@ -50,19 +79,15 @@
 <section id="gis">
     <h2>Elaborazioni GIS</h2>
 
-    <p>
-        Espansione di <em>Erigeron sumatrensis</em> in Trentino  
-        (dati: sezione botanica FMCR):
-    </p>
-    <img src="images/e_sumatrensis.gif"
-         alt="Espansione di Erigeron sumatrensis in Trentino">
+    <div class="gis-gifs">
+        <img src="images/e_sumatrensis.gif" alt="Espansione di Erigeron sumatrensis in Trentino">
+        <img src="images/e_canadensis.gif" alt="Espansione di Erigeron canadensis in Trentino">
+    </div>
 
-    <p>
-        Espansione di <em>Erigeron canadensis</em> in Trentino  
-        (dati: sezione botanica FMCR):
-    </p>
-    <img src="images/e_canadensis.gif"
-         alt="Espansione di Erigeron canadensis in Trentino">
+    <div class="gis-image">
+        <img src="images/ato_baldo.jpg" alt="Ato Baldo">
+        <div class="caption">Ato Baldo - vista del territorio</div>
+    </div>
 </section>
 
 <!-- SEZIONE FOTOGRAFIA / TOUR -->
@@ -72,9 +97,7 @@
     <div class="projects">
         <div>
             <h3>360° Tour</h3>
-            <iframe src="https://tomasigiulia.github.io/360tour/" 
-                    loading="lazy">
-            </iframe>
+            <iframe src="https://tomasigiulia.github.io/360tour/" loading="lazy"></iframe>
         </div>
     </div>
 </section>
