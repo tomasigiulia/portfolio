@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
-            max-width: 1000px;
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -19,7 +19,7 @@
         }
 
         section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         img {
@@ -29,21 +29,15 @@
             height: auto;
         }
 
-        .projects {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
         .projects iframe {
             width: 100%;
-            height: 600px; /* più orizzontale / panoramico */
+            height: 800px; /* maggiore altezza per tour panoramico */
             border: 1px solid #ccc;
         }
 
         @media (max-width: 768px) {
             .projects iframe {
-                height: 400px;
+                height: 500px; /* ridotto su mobile */
             }
         }
     </style>
@@ -71,9 +65,9 @@
          alt="Espansione di Erigeron canadensis in Trentino">
 </section>
 
-<!-- SEZIONE FOTOGRAFIA / ALTRI PROGETTI -->
+<!-- SEZIONE FOTOGRAFIA / TOUR -->
 <section id="fotografia">
-    <h2>Fotografia / Altri progetti</h2>
+    <h2>Fotografia / 360° Tour</h2>
 
     <div class="projects">
         <div>
