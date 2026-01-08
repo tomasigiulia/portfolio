@@ -4,6 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alcuni miei elaborati</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        img {
+            display: block;
+            margin: 20px 0;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .projects {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .projects iframe {
+            flex: 1 1 48%;
+            height: 500px;
+            border: 1px solid #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .projects iframe {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -15,7 +54,6 @@ Espansione di <em>Erigeron sumatrensis</em> in Trentino
 </p>
 
 <img src="images/e_sumatrensis.gif"
-     width="400"
      alt="Espansione di Erigeron sumatrensis in Trentino">
 
 <p>
@@ -24,29 +62,21 @@ Espansione di <em>Erigeron canadensis</em> in Trentino
 </p>
 
 <img src="images/e_canadensis.gif"
-     width="400"
      alt="Espansione di Erigeron canadensis in Trentino">
 
 <h2>Altri progetti</h2>
 
-<h3>360° Tour</h3>
-<iframe
-    src="https://tomasigiulia.github.io/360tour/"
-    width="100%"
-    height="500"
-    style="border: 1px solid #ccc;"
-    loading="lazy">
-</iframe>
+<div class="projects">
+    <div>
+        <h3>360° Tour</h3>
+        <iframe src="https://tomasigiulia.github.io/360tour/" loading="lazy"></iframe>
+    </div>
 
-<h3>Sala Cambiamento</h3>
-<iframe
-    src="https://tomasigiulia.github.io/salacambiamento/"
-    width="100%"
-    height="500"
-    style="border: 1px solid #ccc;"
-    loading="lazy">
-</iframe>
+    <div>
+        <h3>Sala Cambiamento</h3>
+        <iframe src="https://tomasigiulia.github.io/salacambiamento/" loading="lazy"></iframe>
+    </div>
+</div>
 
-    
 </body>
 </html>
