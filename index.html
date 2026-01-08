@@ -1,153 +1,163 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alcuni miei elaborati</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alcuni miei elaborati</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    h1, h2, h3 {
+        color: #2c3e50;
+    }
 
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
+    section {
+        margin-bottom: 60px;
+    }
 
-        section {
-            margin-bottom: 60px;
-        }
+    /* ===== PROFILO ===== */
+    #profilo {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
 
-        /* ===== PROFILO ===== */
+    #profilo img {
+        width: 180px;
+        border-radius: 10px;
+        border: 2px solid #ccc;
+    }
+
+    #profilo a {
+        padding: 10px 15px;
+        background-color: #2980b9;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+    #profilo a:hover {
+        background-color: #1f618d;
+    }
+
+    /* ===== GIS ===== */
+    .gis-gifs {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 20px 0;
+        align-items: flex-start;
+    }
+
+    .gif-wrapper {
+        width: 48%;
+        text-align: center;
+    }
+
+    .gif-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .gis-image {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .gis-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .caption {
+        text-align: center;
+        font-style: italic;
+        margin-top: 10px;
+    }
+
+    /* ===== APP ===== */
+    .app-box {
+        border: 1px solid #ccc;
+        padding: 15px;
+        width: 300px;
+        margin: 0 auto;
+        border-radius: 8px;
+        text-align: center;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .app-box img {
+        width: 100px;
+        border-radius: 20%;
+        margin-bottom: 15px;
+    }
+
+    .app-box a {
+        display: inline-block;
+        padding: 8px 15px;
+        background-color: #2980b9;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .app-box a:hover {
+        background-color: #1f618d;
+    }
+
+    /* ===== FOTO ===== */
+    .macro-photos {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .macro-photos div {
+        flex: 1 1 30%;
+        text-align: center;
+    }
+
+    .macro-photos img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* ===== TOUR 360 ===== */
+    .projects iframe {
+        width: 100%;
+        height: 800px;
+        border: 1px solid #ccc;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
         #profilo {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            margin-bottom: 60px;
+            flex-direction: column;
+            text-align: center;
         }
-
-        #profilo img {
-            width: 180px;
-            border-radius: 10px;
-            border: 2px solid #ccc;
-        }
-
-        /* ===== GIS ===== */
-        .gis-gifs {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-            align-items: flex-start;
-        }
-
         .gif-wrapper {
-            width: 48%;
-            text-align: center;
-        }
-
-        .gif-wrapper img {
             width: 100%;
-            height: auto;
-            display: block;
         }
-
-        .gis-image {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .gis-image img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .caption {
-            text-align: center;
-            font-style: italic;
-            margin-top: 10px;
-        }
-
-        /* ===== APP ===== */
-        .app-box {
-            border: 1px solid #ccc;
-            padding: 15px;
-            width: 300px;
-            margin: 0 auto;
-            border-radius: 8px;
-            text-align: center;
-            background-color: #f9f9f9;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        .app-box img {
-            width: 100px;
-            border-radius: 20%;
-            margin-bottom: 15px;
-        }
-
-        .app-box a {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: #2980b9;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .app-box a:hover {
-            background-color: #1f618d;
-        }
-
-        /* ===== FOTOGRAFIA ===== */
-        .macro-photos {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .macro-photos div {
-            flex: 1 1 30%;
-            text-align: center;
-        }
-
-        .macro-photos img {
-            width: 100%;
-            height: auto;
-        }
-
-        /* ===== TOUR 360 ===== */
         .projects iframe {
-            width: 100%;
-            height: 800px;
-            border: 1px solid #ccc;
+            height: 500px;
         }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            #profilo {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .gif-wrapper {
-                width: 100%;
-            }
-
-            .projects iframe {
-                height: 500px;
-            }
-
-            .macro-photos div {
-                flex: 1 1 100%;
-            }
+        .macro-photos div {
+            flex: 1 1 100%;
         }
-    </style>
+    }
+</style>
 </head>
 
 <body>
@@ -155,9 +165,8 @@
 <!-- ===== PROFILO ===== -->
 <section id="profilo">
     <img src="images/miafoto.jpg" alt="Giulia Tomasi">
-
     <div>
-        <h2>Giulia Tomasi – Biologa Ambientale | Esperta in Botanica</h2>
+        <h2>Giulia Tomasi – Biologa Ambientale | Esperta in Flora</h2>
         <p>Biologa ambientale con consolidata esperienza in:</p>
         <ul>
             <li>Rilievi floristici e monitoraggi ambientali</li>
@@ -165,13 +174,7 @@
             <li>Soluzioni digitali per rilievi sul campo</li>
             <li>Fotografia naturalistica e sferica</li>
         </ul>
-
-        <p>
-            <a href="CV_Giulia_Tomasi_agg_gen2026ok.pdf" download
-               style="padding:10px 15px;background:#2980b9;color:#fff;text-decoration:none;border-radius:5px;">
-                📄 Scarica il Curriculum Vitae
-            </a>
-        </p>
+        <a href="CV_Giulia_Tomasi_agg_gen2026ok.pdf" download>📄 Scarica il Curriculum Vitae</a>
     </div>
 </section>
 
@@ -180,26 +183,20 @@
 <!-- ===== GIS / ELABORAZIONI ===== -->
 <section id="gis">
     <h2>Elaborazioni GIS</h2>
-
     <div class="gis-gifs">
         <div class="gif-wrapper">
             <img src="images/e_sumatrensis.gif" alt="Erigeron sumatrensis">
             <div class="caption">Espansione di <i>Erigeron sumatrensis</i> in Trentino (dati: FMCR)</div>
         </div>
-
         <div class="gif-wrapper">
             <img src="images/e_canadensis.gif" alt="Erigeron canadensis">
             <div class="caption">Espansione di <i>Erigeron canadensis</i> in Trentino (dati: FMCR)</div>
         </div>
     </div>
-
     <div class="gis-image">
         <img src="images/Androsace_alpina.jpg" alt="Androsace alpina">
-        <div class="caption">
-            <i>Androsace alpina</i> – mappa distributiva (Bertolli et al., 2024)
-        </div>
+        <div class="caption"><i>Androsace alpina</i> – mappa distributiva (Bertolli et al., 2024)</div>
     </div>
-
     <div class="gis-image">
         <img src="images/ato_baldo.jpg" alt="Ato Baldo">
         <div class="caption">
@@ -211,40 +208,31 @@
 <!-- ===== APP ===== -->
 <section id="app">
     <h2>App e strumenti per il rilevamento in campo</h2>
-
     <div class="app-box">
         <img src="images/rilevaflora.jpg" alt="RilevaFlora">
         <h3>RilevaFlora</h3>
-        <p>
-            App per rilevamenti floristici sviluppata per Trento e Verona, applicabile a qualsiasi territorio.
-        </p>
-        <a href="https://apps.apple.com/it/app/rilevaflora/id6753683356" target="_blank">
-            Apri su App Store
-        </a>
+        <p>App per rilevamenti floristici sviluppata per Trento e Verona, applicabile a qualsiasi territorio.</p>
+        <a href="https://apps.apple.com/it/app/rilevaflora/id6753683356" target="_blank">Apri su App Store</a>
     </div>
 </section>
 
 <!-- ===== FOTOGRAFIA ===== -->
 <section id="fotografia">
     <h2>Fotografia macro</h2>
-
     <div class="macro-photos">
         <div>
             <img src="images/DSC9268.jpg" alt="Cylindromyia">
             <div class="caption">Cylindromyia sp. su <i>Centaurea bracteata</i></div>
         </div>
-
         <div>
             <img src="images/IMG_0411Lamium maculatum.jpg" alt="Lamium maculatum">
             <div class="caption"><i>Lamium maculatum</i></div>
         </div>
-
         <div>
             <img src="images/Orchis_mascula.jpg" alt="Orchis mascula">
             <div class="caption"><i>Orchis mascula</i></div>
         </div>
     </div>
-
     <h3>Foto 360° (sferiche) da drone</h3>
     <div class="projects">
         <iframe src="https://tomasigiulia.github.io/360tour/" loading="lazy"></iframe>
