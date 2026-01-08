@@ -22,6 +22,27 @@
             margin-bottom: 50px;
         }
 
+        /* Sezione profilo */
+        #profilo {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        #profilo img {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+        }
+
+        @media (max-width: 768px) {
+            #profilo {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
         /* Contenitore GIF */
         .gis-gifs {
             display: flex;
@@ -33,7 +54,7 @@
 
         /* Wrapper per GIF + didascalia */
         .gif-wrapper {
-            width: 48%;       /* larghezza per affiancamento */
+            width: 48%;
             text-align: center;
         }
 
@@ -43,14 +64,13 @@
             display: block;
         }
 
-        /* Didascalia */
         .caption {
             text-align: center;
             font-style: italic;
             margin-top: 10px;
         }
 
-        /* Immagini aggiuntive centrali */
+        /* Immagini centrali GIS */
         .gis-image {
             text-align: center;
             margin-top: 30px;
@@ -102,7 +122,7 @@
             background-color: #1f618d;
         }
 
-        /* Tour */
+        /* Tour 360° */
         .projects iframe {
             width: 100%;
             height: 800px;
@@ -110,18 +130,77 @@
         }
 
         @media (max-width: 768px) {
-            .gif-wrapper {
-                width: 100%;   /* GIF diventano verticali su mobile */
-            }
-            .projects iframe {
-                height: 500px;
-            }
+            .gif-wrapper { width: 100%; }
+            .projects iframe { height: 500px; }
         }
     </style>
 </head>
 <body>
 
+<!-- SEZIONE PROFILO -->
+<section id="profilo">
+    <div style="flex: 0 0 200px;">
+        <img src="images/tuafoto.jpg" alt="Giulia Tomasi">
+    </div>
+    <div>
+        <h2>Giulia Tomasi – Biologa Ambientale | Esperta in Botanica</h2>
+        <p>Biologa ambientale con specializzazione in botanica, con consolidata esperienza in:</p>
+        <ul>
+            <li><strong>Riconoscimento della flora e studi floristico-vegetazionali:</strong> rilievi, censimenti, transetti, quadrati e monitoraggi sul campo.</li>
+            <li><strong>GIS e geodatabase:</strong> gestione dati spaziali, analisi cartografiche ed elaborazioni geografiche applicate alle scienze naturali e all’ambiente.</li>
+            <li><strong>Soluzioni digitali per rilievi sul campo:</strong> progettazione di sistemi ad hoc e utilizzo di smartphone e tablet per la raccolta dati.</li>
+            <li><strong>Fotografia naturalistica:</strong> competenze in macrofotografia e fotografia sferica per documentazione scientifica e divulgativa.</li>
+        </ul>
+    </div>
+</section>
+
 <h1>Alcuni sviluppi realizzati</h1>
+
+<!-- SEZIONE GIS -->
+<section id="gis">
+    <h2>Elaborazioni GIS</h2>
+    <div class="gis-gifs">
+        <div class="gif-wrapper">
+            <img src="images/e_sumatrensis.gif" alt="Espansione di Erigeron sumatrensis in Trentino">
+            <div class="caption">Espansione di Erigeron sumatrensis in Trentino (dati: FMCR)</div>
+        </div>
+        <div class="gif-wrapper">
+            <img src="images/e_canadensis.gif" alt="Espansione di Erigeron canadensis in Trentino">
+            <div class="caption">Espansione di Erigeron canadensis in Trentino (dati: FMCR)</div>
+        </div>
+    </div>
+    <div class="gis-image">
+        <img src="images/Androsace_alpina.jpg" alt="Androsace alpina">
+        <div class="caption">Androsace alpina mappa distributiva (Bertolli et al., 2024)</div>
+    </div>
+    <div class="gis-image">
+        <img src="images/ato_baldo.jpg" alt="Ato Baldo">
+        <div class="caption">Hotspots floristici delle specie endemiche su griglia 1km (Stima densità Kernel)</div>
+    </div>
+</section>
+
+<!-- SEZIONE APP -->
+<section id="app">
+    <h2>App e strumenti per rilevamento in campo</h2>
+    <div class="app-box">
+        <img src="images/rilevaflora.jpg" alt="Icona RilevaFlora">
+        <h3>RilevaFlora</h3>
+        <p>App per rilevamenti floristici studiata per Trento e Verona, applicabile a qualsiasi territorio. Ideale per mappature di dettaglio.</p>
+        <a href="https://apps.apple.com/it/app/rilevaflora/id6753683356" target="_blank">Apri su App Store</a>
+    </div>
+</section>
+
+<!-- SEZIONE FOTOGRAFIA -->
+<section id="fotografia">
+    <h2>Fotografia macro e 360°</h2>
+    <div class="macro-photos" style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+        <div style="flex: 1 1 30%; text-align: center;">
+            <img src="images/DSC9268.jpg" alt="Foto macro 1" style="width: 100%; height: auto;">
+            <div class="caption">Cylindromyia sp. su Centaurea bracteata</div>
+        </div>
+        <div style="flex: 1 1 30%; text-align: center;">
+            <img src="images/IMG_0411Lamium maculatum.jpg" alt="Foto macro 2" style="width: 100%; height: auto;">
+            <div class="caption">Lamium mac
 
 <!-- SEZIONE GIS / MAPPE -->
 <section id="gis">
