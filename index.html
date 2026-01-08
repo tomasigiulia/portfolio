@@ -22,7 +22,7 @@
             margin-bottom: 50px;
         }
 
-        /* Contenitore per GIF affiancate */
+        /* Contenitore GIF */
         .gis-gifs {
             display: flex;
             gap: 20px;
@@ -31,9 +31,14 @@
             align-items: flex-start;
         }
 
-        .gis-gifs img {
-            width: 48%;
-            max-width: 100%;
+        /* Wrapper per GIF + didascalia */
+        .gif-wrapper {
+            width: 48%;       /* larghezza per affiancamento */
+            text-align: center;
+        }
+
+        .gif-wrapper img {
+            width: 100%;
             height: auto;
             display: block;
         }
@@ -45,7 +50,7 @@
             margin-top: 10px;
         }
 
-        /* Immagine aggiuntiva */
+        /* Immagini aggiuntive centrali */
         .gis-image {
             text-align: center;
             margin-top: 30px;
@@ -54,13 +59,6 @@
         .gis-image img {
             max-width: 100%;
             height: auto;
-        }
-
-        /* Tour */
-        .projects iframe {
-            width: 100%;
-            height: 800px;
-            border: 1px solid #ccc;
         }
 
         /* Box anteprima App Store */
@@ -104,9 +102,16 @@
             background-color: #1f618d;
         }
 
+        /* Tour */
+        .projects iframe {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ccc;
+        }
+
         @media (max-width: 768px) {
-            .gis-gifs img {
-                width: 100%;
+            .gif-wrapper {
+                width: 100%;   /* GIF diventano verticali su mobile */
             }
             .projects iframe {
                 height: 500px;
@@ -122,24 +127,25 @@
 <section id="gis">
     <h2>Elaborazioni GIS</h2>
 
-   <!-- GIF affiancate con didascalie -->
-<div class="gis-gifs">
-    <div style="flex: 1; text-align: center;">
-        <img src="images/e_sumatrensis.gif" alt="Espansione di Erigeron sumatrensis in Trentino">
-        <div class="caption">Espansione di Erigeron sumatrensis in Trentino</div>
+    <!-- GIF affiancate con didascalie -->
+    <div class="gis-gifs">
+        <div class="gif-wrapper">
+            <img src="images/e_sumatrensis.gif" alt="Espansione di Erigeron sumatrensis in Trentino">
+            <div class="caption">Espansione di Erigeron sumatrensis in Trentino</div>
+        </div>
+        <div class="gif-wrapper">
+            <img src="images/e_canadensis.gif" alt="Espansione di Erigeron canadensis in Trentino">
+            <div class="caption">Espansione di Erigeron canadensis in Trentino</div>
+        </div>
     </div>
-    <div style="flex: 1; text-align: center;">
-        <img src="images/e_canadensis.gif" alt="Espansione di Erigeron canadensis in Trentino">
-        <div class="caption">Espansione di Erigeron canadensis in Trentino</div>
-    </div>
-</div>
 
-    <!-- Nuova immagine con didascalia -->
+    <!-- Immagine aggiuntiva: Androsace alpina -->
     <div class="gis-image">
         <img src="images/Androsace_alpina.jpg" alt="Androsace alpina">
         <div class="caption">Androsace alpina mappa distributiva (Bertolli et al., 2024 - Flora endemica nel nord Italia. Athesia.Fondazione MCR, 542 pp.)</div>
     </div>
 
+    <!-- Immagine aggiuntiva: Ato Baldo -->
     <div class="gis-image">
         <img src="images/ato_baldo.jpg" alt="Ato Baldo">
         <div class="caption">Ato Baldo - Hotspots floristici delle specie endemiche su griglia 1km e tramite mappa di concentrazione (Stima densità Kernel)</div>
@@ -148,12 +154,12 @@
 
 <!-- SEZIONE APP / STRUMENTI -->
 <section id="app">
-    <h2>App e strumenti sviluppati per il rilevamento in campo sia per iOS che android </h2>
+    <h2>App e strumenti sviluppati per il rilevamento in campo sia per iOS che Android</h2>
 
     <div class="app-box">
         <img src="images/rilevaflora.jpg" alt="Icona RilevaFlora">
         <h3>RilevaFlora</h3>
-        <p>App per rilevamenti floristici studiata per le prov. di Trento e Verona ma applicabile e a qualsiasi territorio. Ideale per mappature di dettaglio.</p>
+        <p>App per rilevamenti floristici studiata per le prov. di Trento e Verona ma applicabile a qualsiasi territorio. Ideale per mappature di dettaglio.</p>
         <a href="https://apps.apple.com/it/app/rilevaflora/id6753683356" target="_blank">Apri su App Store</a>
     </div>
 </section>
@@ -186,6 +192,6 @@
         </div>
     </div>
 </section>
+
 </body>
 </html>
-
