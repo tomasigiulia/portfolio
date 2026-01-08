@@ -18,6 +18,10 @@
             color: #2c3e50;
         }
 
+        section {
+            margin-bottom: 40px;
+        }
+
         img {
             display: block;
             margin: 20px 0;
@@ -27,19 +31,19 @@
 
         .projects {
             display: flex;
+            flex-direction: column;
             gap: 20px;
-            flex-wrap: wrap;
         }
 
         .projects iframe {
-            flex: 1 1 48%;
-            height: 500px;
+            width: 100%;
+            height: 600px; /* più orizzontale / panoramico */
             border: 1px solid #ccc;
         }
 
         @media (max-width: 768px) {
             .projects iframe {
-                flex: 1 1 100%;
+                height: 400px;
             }
         }
     </style>
@@ -48,35 +52,38 @@
 
 <h1>Alcuni sviluppi realizzati</h1>
 
-<p>
-Espansione di <em>Erigeron sumatrensis</em> in Trentino  
-(dati: sezione botanica FMCR):
-</p>
+<!-- SEZIONE GIS / MAPPE -->
+<section id="gis">
+    <h2>Elaborazioni GIS</h2>
 
-<img src="images/e_sumatrensis.gif"
-     alt="Espansione di Erigeron sumatrensis in Trentino">
+    <p>
+        Espansione di <em>Erigeron sumatrensis</em> in Trentino  
+        (dati: sezione botanica FMCR):
+    </p>
+    <img src="images/e_sumatrensis.gif"
+         alt="Espansione di Erigeron sumatrensis in Trentino">
 
-<p>
-Espansione di <em>Erigeron canadensis</em> in Trentino  
-(dati: sezione botanica FMCR):
-</p>
+    <p>
+        Espansione di <em>Erigeron canadensis</em> in Trentino  
+        (dati: sezione botanica FMCR):
+    </p>
+    <img src="images/e_canadensis.gif"
+         alt="Espansione di Erigeron canadensis in Trentino">
+</section>
 
-<img src="images/e_canadensis.gif"
-     alt="Espansione di Erigeron canadensis in Trentino">
+<!-- SEZIONE FOTOGRAFIA / ALTRI PROGETTI -->
+<section id="fotografia">
+    <h2>Fotografia / Altri progetti</h2>
 
-<h2>Altri progetti</h2>
-
-<div class="projects">
-    <div>
-        <h3>360° Tour</h3>
-        <iframe src="https://tomasigiulia.github.io/360tour/" loading="lazy"></iframe>
+    <div class="projects">
+        <div>
+            <h3>360° Tour</h3>
+            <iframe src="https://tomasigiulia.github.io/360tour/" 
+                    loading="lazy">
+            </iframe>
+        </div>
     </div>
-
-    <div>
-        <h3>Sala Cambiamento</h3>
-        <iframe src="https://tomasigiulia.github.io/salacambiamento/" loading="lazy"></iframe>
-    </div>
-</div>
+</section>
 
 </body>
 </html>
