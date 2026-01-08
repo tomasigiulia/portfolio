@@ -23,6 +23,20 @@
             margin-bottom: 60px;
         }
 
+        /* ===== PROFILO ===== */
+        #profilo {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        #profilo img {
+            width: 180px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+        }
+
         /* ===== GIS ===== */
         .gis-gifs {
             display: flex;
@@ -86,7 +100,11 @@
             border-radius: 5px;
         }
 
-        /* ===== FOTO ===== */
+        .app-box a:hover {
+            background-color: #1f618d;
+        }
+
+        /* ===== FOTOGRAFIA ===== */
         .macro-photos {
             display: flex;
             gap: 20px;
@@ -110,12 +128,23 @@
             border: 1px solid #ccc;
         }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
+            #profilo {
+                flex-direction: column;
+                text-align: center;
+            }
+
             .gif-wrapper {
                 width: 100%;
             }
+
             .projects iframe {
                 height: 500px;
+            }
+
+            .macro-photos div {
+                flex: 1 1 100%;
             }
         }
     </style>
@@ -123,16 +152,39 @@
 
 <body>
 
+<!-- ===== PROFILO ===== -->
+<section id="profilo">
+    <img src="images/miafoto.jpg" alt="Giulia Tomasi">
+
+    <div>
+        <h2>Giulia Tomasi – Biologa Ambientale | Esperta in Botanica</h2>
+        <p>Biologa ambientale con consolidata esperienza in:</p>
+        <ul>
+            <li>Rilievi floristici e monitoraggi ambientali</li>
+            <li>GIS, analisi spaziali e geodatabase</li>
+            <li>Soluzioni digitali per rilievi sul campo</li>
+            <li>Fotografia naturalistica e sferica</li>
+        </ul>
+
+        <p>
+            <a href="CV_Giulia_Tomasi_agg_gen2026ok.pdf" download
+               style="padding:10px 15px;background:#2980b9;color:#fff;text-decoration:none;border-radius:5px;">
+                📄 Scarica il Curriculum Vitae
+            </a>
+        </p>
+    </div>
+</section>
+
 <h1>Alcuni sviluppi realizzati</h1>
 
-<!-- ================= GIS ================= -->
+<!-- ===== GIS / ELABORAZIONI ===== -->
 <section id="gis">
     <h2>Elaborazioni GIS</h2>
 
     <div class="gis-gifs">
         <div class="gif-wrapper">
             <img src="images/e_sumatrensis.gif" alt="Erigeron sumatrensis">
-            <div class="caption">Espansione di <i>Erigeron sumatrensis </i> in Trentino (dati: FMCR)</div>
+            <div class="caption">Espansione di <i>Erigeron sumatrensis</i> in Trentino (dati: FMCR)</div>
         </div>
 
         <div class="gif-wrapper">
@@ -144,21 +196,19 @@
     <div class="gis-image">
         <img src="images/Androsace_alpina.jpg" alt="Androsace alpina">
         <div class="caption">
-            <i>Androsace alpina</i> – mappa distributiva
-            (Bertolli et al., 2024)
+            <i>Androsace alpina</i> – mappa distributiva (Bertolli et al., 2024)
         </div>
     </div>
 
     <div class="gis-image">
         <img src="images/ato_baldo.jpg" alt="Ato Baldo">
         <div class="caption">
-            Ato Baldo – Hotspots floristici delle specie endemiche su griglia kmq e Mappa di Concentrazione
-            (Kernel Density)
+            Ato Baldo – Hotspots floristici delle specie endemiche su griglia kmq e Mappa di Concentrazione (Kernel Density)
         </div>
     </div>
 </section>
 
-<!-- ================= APP ================= -->
+<!-- ===== APP ===== -->
 <section id="app">
     <h2>App e strumenti per il rilevamento in campo</h2>
 
@@ -166,8 +216,7 @@
         <img src="images/rilevaflora.jpg" alt="RilevaFlora">
         <h3>RilevaFlora</h3>
         <p>
-            App per rilevamenti floristici sviluppata per Trento e Verona,
-            applicabile a qualsiasi territorio.
+            App per rilevamenti floristici sviluppata per Trento e Verona, applicabile a qualsiasi territorio.
         </p>
         <a href="https://apps.apple.com/it/app/rilevaflora/id6753683356" target="_blank">
             Apri su App Store
@@ -175,7 +224,7 @@
     </div>
 </section>
 
-<!-- ================= FOTOGRAFIA ================= -->
+<!-- ===== FOTOGRAFIA ===== -->
 <section id="fotografia">
     <h2>Fotografia macro</h2>
 
@@ -196,7 +245,6 @@
         </div>
     </div>
 
-    <!-- ===== Sottosezione 360° ===== -->
     <h3>Foto 360° (sferiche) da drone</h3>
     <div class="projects">
         <iframe src="https://tomasigiulia.github.io/360tour/" loading="lazy"></iframe>
