@@ -87,11 +87,18 @@
     }
 
     /* ===== APP ===== */
+    #app {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
     .app-box {
         border: 1px solid #ccc;
         padding: 15px;
         width: 300px;
-        margin: 0 auto;
         border-radius: 8px;
         text-align: center;
         background-color: #f9f9f9;
@@ -157,6 +164,16 @@
             flex: 1 1 100%;
         }
     }
+
+    @media (max-width: 640px) {
+        #app {
+            flex-direction: column;
+            align-items: center;
+        }
+        .app-box {
+            width: 90%;
+        }
+    }
 </style>
 </head>
 
@@ -216,7 +233,6 @@
         <a href="https://apps.apple.com/it/app/rilevaflora/id6753683356" target="_blank">Apri su App Store</a>
     </div>
 
-    <!-- anteprima per il Form -->
     <div class="app-box">
         <img src="images/form.jpg" alt="Modulo digitale">
         <h3>Modulo digitale</h3>
