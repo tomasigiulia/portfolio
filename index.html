@@ -10,8 +10,8 @@
             line-height: 1.6;
             margin: 20px;
             max-width: 1200px;
-            margin-left:  auto;
-            margin-right:  auto;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         h1, h2, h3 {
@@ -28,13 +28,14 @@
             gap: 20px;
             flex-wrap: wrap;
             margin: 20px 0;
+            align-items: flex-start; /* allinea in alto le immagini */
         }
 
         .gis-gifs img {
-            flex: 1 1 48%;
-            max-width: 48%;
+            width: 48%;       /* larghezza fissa per affiancare */
+            max-width: 100%;
             height: auto;
-            object-fit: contain;
+            display: block;   /* evita spazi invisibili sotto */
         }
 
         /* Didascalia */
@@ -46,8 +47,8 @@
 
         /* Immagine aggiuntiva */
         .gis-image {
-            text-align:  center;
-            margin-top:  30px;
+            text-align: center;
+            margin-top: 30px;
         }
 
         .gis-image img {
@@ -58,17 +59,16 @@
         /* Tour */
         .projects iframe {
             width: 100%;
-            height: 800px; /* panorama maggiore */
+            height: 800px; /* più panoramico su desktop */
             border: 1px solid #ccc;
         }
 
         @media (max-width: 768px) {
             .gis-gifs img {
-                flex: 1 1 100%;
-                max-width: 100%;
+                width: 100%;   /* su mobile le GIF diventano verticali */
             }
             .projects iframe {
-                height: 500px;
+                height: 500px; /* ridotto su mobile */
             }
         }
     </style>
@@ -76,7 +76,6 @@
 <body>
 
 <h1>Alcuni sviluppi realizzati</h1>
-
 
 <!-- SEZIONE GIS / MAPPE -->
 <section id="gis">
@@ -91,7 +90,7 @@
     <!-- Immagine aggiuntiva con didascalia -->
     <div class="gis-image">
         <img src="images/ato_baldo.jpg" alt="Ato Baldo">
-        <div class="caption">Ato Baldo - Hotspot delle specie endemiche su griglia 1 km e Mappa di concentrazione (stima Densità di Kernel) </div>
+        <div class="caption">Ato Baldo - vista del territorio</div>
     </div>
 </section>
 
@@ -102,10 +101,11 @@
     <div class="projects">
         <div>
             <h3>360° Tour</h3>
-            <iframe src="https://tomasigiulia.github. io/360tour/" loading="lazy"></iframe>
+            <iframe src="https://tomasigiulia.github.io/360tour/" loading="lazy"></iframe>
         </div>
     </div>
 </section>
 
 </body>
 </html>
+
