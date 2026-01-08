@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giulia Tomasi – Portfolio</title>
+    <title>Alcuni miei elaborati</title>
 
     <style>
         body {
@@ -23,31 +23,13 @@
             margin-bottom: 60px;
         }
 
-        /* ===== PROFILO ===== */
-        #profilo {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        #profilo img {
-            width: 200px;
-            border-radius: 10px;
-            border: 2px solid #ccc;
-        }
-
-        @media (max-width: 768px) {
-            #profilo {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-
         /* ===== GIS ===== */
         .gis-gifs {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
+            margin: 20px 0;
+            align-items: flex-start;
         }
 
         .gif-wrapper {
@@ -58,6 +40,7 @@
         .gif-wrapper img {
             width: 100%;
             height: auto;
+            display: block;
         }
 
         .gis-image {
@@ -67,28 +50,25 @@
 
         .gis-image img {
             max-width: 100%;
+            height: auto;
         }
 
         .caption {
+            text-align: center;
             font-style: italic;
-            margin-top: 8px;
-        }
-
-        @media (max-width: 768px) {
-            .gif-wrapper {
-                width: 100%;
-            }
+            margin-top: 10px;
         }
 
         /* ===== APP ===== */
         .app-box {
-            width: 320px;
-            margin: auto;
-            padding: 20px;
-            text-align: center;
             border: 1px solid #ccc;
-            border-radius: 10px;
-            background: #f9f9f9;
+            padding: 15px;
+            width: 300px;
+            margin: 0 auto;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
         .app-box img {
@@ -99,18 +79,14 @@
 
         .app-box a {
             display: inline-block;
-            padding: 10px 15px;
-            background: #2980b9;
+            padding: 8px 15px;
+            background-color: #2980b9;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
         }
 
-        .app-box a:hover {
-            background: #1f618d;
-        }
-
-        /* ===== FOTOGRAFIA ===== */
+        /* ===== FOTO ===== */
         .macro-photos {
             display: flex;
             gap: 20px;
@@ -127,7 +103,7 @@
             height: auto;
         }
 
-        /* ===== 360 ===== */
+        /* ===== TOUR 360 ===== */
         .projects iframe {
             width: 100%;
             height: 800px;
@@ -135,6 +111,9 @@
         }
 
         @media (max-width: 768px) {
+            .gif-wrapper {
+                width: 100%;
+            }
             .projects iframe {
                 height: 500px;
             }
@@ -144,95 +123,82 @@
 
 <body>
 
-<!-- ===== PROFILO ===== -->
-<section id="profilo">
-    <img src="images/miafoto.jpg" alt="Giulia Tomasi">
-
-    <div>
-        <h2>Giulia Tomasi – Biologa Ambientale | Esperta in flora</h2>
-        <p>Biologa ambientale con consolidata esperienza in:</p>
-        <ul>
-            <li>Rilievi floristici e monitoraggi ambientali</li>
-            <li>GIS, analisi spaziali e geodatabase</li>
-            <li>Soluzioni digitali per rilievi sul campo</li>
-            <li>Fotografia naturalistica e sferica</li>
-        </ul>
-
-        <p>
-            <a href="CV_Giulia_Tomasi_agg_gen2026ok.pdf" download
-               style="padding:10px 15px;background:#2980b9;color:#fff;text-decoration:none;border-radius:5px;">
-                📄 Scarica il Curriculum Vitae
-            </a>
-        </p>
-    </div>
-</section>
-
 <h1>Alcuni sviluppi realizzati</h1>
 
-<!-- ===== GIS ===== -->
+<!-- ================= GIS ================= -->
 <section id="gis">
     <h2>Elaborazioni GIS</h2>
 
     <div class="gis-gifs">
         <div class="gif-wrapper">
             <img src="images/e_sumatrensis.gif" alt="Erigeron sumatrensis">
-            <div class="caption">Espansione di <em>Erigeron sumatrensis</em> (FMCR)</div>
+            <div class="caption">Espansione di <i>Erigeron sumatrensis</i> in Trentino</div>
         </div>
 
         <div class="gif-wrapper">
             <img src="images/e_canadensis.gif" alt="Erigeron canadensis">
-            <div class="caption">Espansione di <em>Erigeron canadensis</em> (FMCR)</div>
+            <div class="caption">Espansione di <i>Erigeron canadensis</i> in Trentino</div>
         </div>
     </div>
 
     <div class="gis-image">
         <img src="images/Androsace_alpina.jpg" alt="Androsace alpina">
-        <div class="caption">Androsace alpina – mappa distributiva (Bertolli et al., 2024)</div>
+        <div class="caption">
+            <i>Androsace alpina</i> – mappa distributiva
+            (Bertolli et al., 2024)
+        </div>
     </div>
 
     <div class="gis-image">
         <img src="images/ato_baldo.jpg" alt="Ato Baldo">
-        <div class="caption">Hotspots floristici – densità Kernel</div>
+        <div class="caption">
+            Ato Baldo – Hotspots floristici delle specie endemiche
+            (Kernel Density)
+        </div>
     </div>
 </section>
 
-<!-- ===== APP ===== -->
+<!-- ================= APP ================= -->
 <section id="app">
-    <h2>App per il rilevamento in campo</h2>
+    <h2>App e strumenti per il rilevamento in campo</h2>
 
     <div class="app-box">
         <img src="images/rilevaflora.jpg" alt="RilevaFlora">
         <h3>RilevaFlora</h3>
-        <p>App per rilievi floristici sviluppata per Trento e Verona, adattabile a qualsiasi territorio.</p>
+        <p>
+            App per rilevamenti floristici sviluppata per Trento e Verona,
+            applicabile a qualsiasi territorio.
+        </p>
         <a href="https://apps.apple.com/it/app/rilevaflora/id6753683356" target="_blank">
             Apri su App Store
         </a>
     </div>
 </section>
 
-<!-- ===== FOTOGRAFIA ===== -->
+<!-- ================= FOTOGRAFIA ================= -->
 <section id="fotografia">
     <h2>Fotografia macro e 360°</h2>
 
     <div class="macro-photos">
         <div>
-            <img src="images/DSC9268.jpg" alt="Cylindromyia sp.">
-            <div class="caption">Cylindromyia sp. su <em>Centaurea bracteata</em></div>
+            <img src="images/DSC9268.jpg" alt="Cylindromyia">
+            <div class="caption">Cylindromyia sp. su <i>Centaurea bracteata</i></div>
         </div>
 
         <div>
             <img src="images/IMG_0411Lamium maculatum.jpg" alt="Lamium maculatum">
-            <div class="caption"><em>Lamium maculatum</em></div>
+            <div class="caption"><i>Lamium maculatum</i></div>
         </div>
 
         <div>
             <img src="images/Orchis_mascula.jpg" alt="Orchis mascula">
-            <div class="caption"><em>Orchis mascula</em></div>
+            <div class="caption"><i>Orchis mascula</i></div>
         </div>
     </div>
 
+    <!-- ===== Sottosezione 360° ===== -->
+    <h3>Foto 360° (sferiche) da drone</h3>
     <div class="projects">
-        <h3>Foto 360° da drone</h3>
         <iframe src="https://tomasigiulia.github.io/360tour/" loading="lazy"></iframe>
     </div>
 </section>
