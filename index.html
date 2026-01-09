@@ -1,309 +1,151 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giulia Tomasi | Portfolio Biologa Ambientale</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --accent: #27ae60; /* Verde natura per biologa */
-            --secondary: #2980b9;
-            --text: #333;
-            --bg: #f8fafc;
-            --white: #ffffff;
-        }
+<style>
+    :root {
+        --primary: #2c3e50;
+        --accent: #27ae60;
+        --secondary: #2980b9;
+        --text: #333;
+        --bg: #f8fafc;
+        --white: #ffffff;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--text);
-            background-color: var(--bg);
-            margin: 0;
-            padding: 0;
-        }
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.7;
+        color: var(--text);
+        background-color: var(--bg);
+        margin: 0;
+        padding: 0;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+    .container {
+        max-width: 1200px; /* Leggermente più largo per dare respiro */
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
 
-        h1, h2, h3 {
-            color: var(--primary);
-            font-weight: 700;
-        }
+    /* ===== PROFILO ===== */
+    #profilo {
+        background: var(--white);
+        padding: 50px;
+        border-radius: 24px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        display: grid;
+        grid-template-columns: 320px 1fr; /* Foto profilo più grande */
+        gap: 50px;
+        align-items: center;
+        margin-bottom: 80px;
+    }
 
-        /* ===== PROFILO ===== */
-        #profilo {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 60px;
-        }
+    #profilo img {
+        width: 100%;
+        border-radius: 20px;
+        object-fit: cover;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
 
-        #profilo img {
-            width: 100%;
-            border-radius: 15px;
-            object-fit: cover;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-        }
+    /* ===== GRID VISUAL (MIGLIORATA) ===== */
+    .grid-visual {
+        display: grid;
+        /* Su desktop usiamo 2 colonne per le mappe per vederle GRANDI */
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+        gap: 35px;
+        margin-bottom: 40px;
+    }
 
-        .profile-text h2 {
-            margin-top: 0;
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
+    /* Per la fotografia macro, possiamo tenere 3 colonne o 2 */
+    .grid-macro {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
+    }
 
-        .tag-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
-        }
+    .card {
+        background: var(--white);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        display: flex;
+        flex-direction: column;
+    }
 
-        .tag-list li {
-            background: #edf2f7;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--secondary);
-        }
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
 
-        .btn-cv {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 25px;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
+    .card-img-container {
+        overflow: hidden;
+        background: #f1f5f9;
+    }
 
-        .btn-cv:hover {
-            background-color: var(--secondary);
-            transform: translateY(-2px);
-        }
+    .card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.6s ease;
+    }
 
-        /* ===== SEZIONI ===== */
-        section { margin-bottom: 80px; }
+    .card:hover img {
+        transform: scale(1.03);
+    }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
+    .card-content {
+        padding: 20px;
+        background: white;
+    }
 
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            display: block;
-            margin: 10px auto;
-            border-radius: 2px;
-        }
+    .caption {
+        font-size: 1rem;
+        color: var(--primary);
+        text-align: center;
+        margin: 0;
+        font-weight: 500;
+    }
 
-        /* ===== GRID GIS & FOTO ===== */
-        .grid-visual {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+    /* Immagine singola grande (Ato Baldo) */
+    .full-width-card {
+        width: 100%;
+        margin-top: 35px;
+    }
 
-        .card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+        #profilo { grid-template-columns: 1fr; text-align: center; padding: 30px; }
+        #profilo img { width: 250px; margin: 0 auto; }
+        .grid-visual, .grid-macro { grid-template-columns: 1fr; }
+        .container { padding: 20px 15px; }
+    }
+</style>
 
-        .card:hover { transform: translateY(-5px); }
-
-        .card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-bottom: 1px solid #eee;
-        }
-
-        .card-content { padding: 15px; }
-
-        .caption {
-            font-size: 0.9rem;
-            color: #666;
-            text-align: center;
-            font-style: italic;
-        }
-
-        /* ===== APP SECTION ===== */
-        .app-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .app-box {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-        }
-
-        .app-box img {
-            width: 80px;
-            height: 80px;
-            border-radius: 18px;
-            margin-bottom: 20px;
-        }
-
-        .btn-app {
-            display: inline-block;
-            margin-top: 15px;
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 700;
-            border-bottom: 2px solid transparent;
-            transition: border 0.3s;
-        }
-
-        .btn-app:hover { border-bottom: 2px solid var(--secondary); }
-
-        /* ===== 360 TOUR ===== */
-        .iframe-container {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            background: #000;
-        }
-
-        iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-            display: block;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 850px) {
-            #profilo { grid-template-columns: 1fr; text-align: center; }
-            #profilo img { width: 200px; margin: 0 auto; }
-            .tag-list { justify-content: center; }
-        }
-    </style>
-</head>
-
-<body>
-
-<div class="container">
-
-    <section id="profilo">
-        <img src="images/miafoto.jpg" alt="Giulia Tomasi">
-        <div class="profile-text">
-            <h2>Giulia Tomasi</h2>
-            <h3 style="color: var(--accent); margin-top: -10px;">Biologa Ambientale | Botanica | Accompagnatrice di Media montagna (AMM)</h3>
-            <p>Specializzata in monitoraggi floristici e analisi spaziali GIS. Unisco le competenze di campo con le più moderne soluzioni digitali per il rilevamento dati.</p>
-            
-            <ul class="tag-list">
-                <li>Rilievi Fitosociologici</li>
-                <li>Monitoraggi floristici</li>
-                <li>Cartografia Habitat</li>
-                <li>GIS Analysis</li>
-                <li>QField</li>
-                <li>Mergin Maps</li>
-                <li>Moduli ODK/KoboToolbox</li>
-                <li>Framework Flutter per App Android/iOS</li>
-                <li>Python, Dart</li>
-                <li>SQL Language</li>
-                <li>Accompagnamenti in ambito montano</li>
-            </ul>
-
-            <a href="CV_Giulia_Tomasi_agg_gen2026ok.pdf" class="btn-cv" download>
-                📄 Scarica il Curriculum Vitae
-            </a>
-        </div>
-    </section>
-
-    <h2 class="section-title">Elaborazioni GIS & Analisi Dati</h2>
-    
-    <section>
-        <div class="grid-visual">
-            <div class="card">
+<h2 class="section-title">Elaborazioni GIS & Analisi Dati</h2>
+<section>
+    <div class="grid-visual">
+        <div class="card">
+            <div class="card-img-container">
                 <img src="images/e_sumatrensis.gif" alt="Erigeron sumatrensis">
-                <div class="card-content">
-                    <p class="caption">Espansione di <i>Erigeron sumatrensis</i> in Trentino (Dati FMCR)</p>
-                </div>
             </div>
-            <div class="card">
-                <img src="images/e_canadensis.gif" alt="Erigeron canadensis">
-                <div class="card-content">
-                    <p class="caption">Espansione di <i>Erigeron canadensis</i> in Trentino (Dati FMCR)</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="images/Androsace_alpina.jpg" alt="Androsace alpina">
-                <div class="card-content">
-                    <p class="caption">Mappa distributiva <i>Androsace alpina</i> (Bertolli et al., 2024)</p>
-                </div>
+            <div class="card-content">
+                <p class="caption">Espansione di <i>Erigeron sumatrensis</i> in Trentino</p>
             </div>
         </div>
         
-        <div class="card" style="margin-top: 25px;">
-            <img src="images/ato_baldo.jpg" alt="Ato Baldo" style="height: auto; max-height: 500px;">
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/Androsace_alpina.jpg" alt="Androsace alpina">
+            </div>
             <div class="card-content">
-                <p class="caption">Ato Baldo – Hotspots floristici e Mappa di Concentrazione (Kernel Density)</p>
+                <p class="caption">Mappa distributiva <i>Androsace alpina</i></p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <h2 class="section-title">Soluzioni Digitali per il Campo</h2>
-    
-    <section class="app-container">
-        <div class="app-box">
-            <img src="images/rilevaflora.jpg" alt="RilevaFlora">
-            <h3>RilevaFlora</h3>
-            <p>App nativa per rilievi floristici ottimizzata per i territori di Trento e Verona.</p>
-            <a href="https://apps.apple.com/it/app/rilevaflora/id6753683356" class="btn-app" target="_blank">Vedi su App Store →</a>
+    <div class="card full-width-card">
+        <div class="card-img-container">
+            <img src="images/ato_baldo.jpg" alt="Ato Baldo">
         </div>
-
-        <div class="app-box">
-            <img src="images/form.jpg" alt="Modulo digitale">
-            <h3>Modulistica ODK/Kobo</h3>
-            <p>Sviluppo di form digitali complessi per il monitoraggio ambientale offline.</p>
-            <a href="https://ee.kobotoolbox.org/x/NkMBO2Vk" class="btn-app" target="_blank">Prova il Form →</a>
+        <div class="card-content">
+            <p class="caption">Ato Baldo – Hotspots floristici e Mappa di Concentrazione (Kernel Density)</p>
         </div>
-    </section>
-
-    <h2 class="section-title">Fotografia macro </h2>
-    
-    <section>
-        <div class="grid-visual" style="margin-bottom: 40px;">
-            <div class="card"><img src="images/DSC9268.jpg" alt="Cylindromyia"><div class="card-content"><p class="caption">Cylindromyia sp. su Centaurea</p></div></div>
-            <div class="card"><img src="images/IMG_0411Lamium maculatum.jpg" alt="Lamium maculatum"><div class="card-content"><p class="caption"><i>Lamium maculatum</i></p></div></div>
-            <div class="card"><img src="images/Orchis_mascula.jpg" alt="Orchis mascula"><div class="card-content"><p class="caption"><i>Orchis mascula</i></p></div></div>
-        </div>
-
-        <h3> Documentazione 360° da drone</h3>
-        <div class="iframe-container">
-            <iframe src="https://tomasigiulia.github.io/360tour/" loading="lazy"></iframe>
-        </div>
-    </section>
-
-</div>
-
-</body>
-</html>
+    </div>
+</section>
