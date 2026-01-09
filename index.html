@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giulia Tomasi | Portfolio Biologa Ambientale</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.min.css">
-
+    
     <style>
         :root {
             --primary: #2c3e50;
-            --accent: #27ae60; 
+            --accent: #27ae60; /* Verde natura per biologa */
             --secondary: #2980b9;
             --text: #333;
             --bg: #f8fafc;
@@ -60,6 +59,7 @@
         .profile-text h2 {
             margin-top: 0;
             font-size: 1.8rem;
+            color: var(--primary);
         }
 
         .tag-list {
@@ -133,22 +133,12 @@
 
         .card:hover { transform: translateY(-5px); }
 
-        /* Stile per il link dell'immagine */
-        .img-link {
-            display: block;
-            cursor: zoom-in;
-            overflow: hidden;
-        }
-
         .card img {
             width: 100%;
             height: 250px;
             object-fit: cover;
-            display: block;
-            transition: opacity 0.3s;
+            border-bottom: 1px solid #eee;
         }
-
-        .card img:hover { opacity: 0.9; }
 
         .card-content { padding: 15px; }
 
@@ -157,7 +147,6 @@
             color: #666;
             text-align: center;
             font-style: italic;
-            margin: 0;
         }
 
         /* ===== APP SECTION ===== */
@@ -226,7 +215,7 @@
         <img src="images/miafoto.jpg" alt="Giulia Tomasi">
         <div class="profile-text">
             <h2>Giulia Tomasi</h2>
-            <h3 style="color: var(--accent); margin-top: -10px;">Biologa Ambientale | Botanica | AMM</h3>
+            <h3 style="color: var(--accent); margin-top: -10px;">Biologa Ambientale | Botanica | Accompagnatrice di Media montagna (AMM)</h3>
             <p>Specializzata in monitoraggi floristici e analisi spaziali GIS. Unisco le competenze di campo con le più moderne soluzioni digitali per il rilevamento dati.</p>
             
             <ul class="tag-list">
@@ -234,8 +223,13 @@
                 <li>Monitoraggi floristici</li>
                 <li>Cartografia Habitat</li>
                 <li>GIS Analysis</li>
-                <li>QField / Mergin Maps</li>
-                <li>Flutter / Python / SQL</li>
+                <li>QField</li>
+                <li>Mergin Maps</li>
+                <li>Moduli ODK/KoboToolbox</li>
+                <li>Framework Flutter per App Android/iOS</li>
+                <li>Python, Dart</li>
+                <li>SQL Language</li>
+                <li>Accompagnamenti in ambito montano</li>
             </ul>
 
             <a href="CV_Giulia_Tomasi_agg_gen2026ok.pdf" class="btn-cv" download>
@@ -246,38 +240,30 @@
 
     <h2 class="section-title">Elaborazioni GIS & Analisi Dati</h2>
     
-    <section id="gallery-gis" class="pswp-gallery">
+    <section>
         <div class="grid-visual">
             <div class="card">
-                <a href="images/e_sumatrensis.gif" class="img-link" target="_blank">
-                    <img src="images/e_sumatrensis.gif" alt="Erigeron sumatrensis">
-                </a>
+                <img src="images/e_sumatrensis.gif" alt="Erigeron sumatrensis">
                 <div class="card-content">
-                    <p class="caption">Espansione di <i>Erigeron sumatrensis</i> (Dati FMCR)</p>
+                    <p class="caption">Espansione di <i>Erigeron sumatrensis</i> in Trentino (Dati FMCR)</p>
                 </div>
             </div>
             <div class="card">
-                <a href="images/e_canadensis.gif" class="img-link" target="_blank">
-                    <img src="images/e_canadensis.gif" alt="Erigeron canadensis">
-                </a>
+                <img src="images/e_canadensis.gif" alt="Erigeron canadensis">
                 <div class="card-content">
-                    <p class="caption">Espansione di <i>Erigeron canadensis</i> (Dati FMCR)</p>
+                    <p class="caption">Espansione di <i>Erigeron canadensis</i> in Trentino (Dati FMCR)</p>
                 </div>
             </div>
             <div class="card">
-                <a href="images/Androsace_alpina.jpg" class="img-link" target="_blank">
-                    <img src="images/Androsace_alpina.jpg" alt="Androsace alpina">
-                </a>
+                <img src="images/Androsace_alpina.jpg" alt="Androsace alpina">
                 <div class="card-content">
-                    <p class="caption">Mappa distributiva <i>Androsace alpina</i> (2024)</p>
+                    <p class="caption">Mappa distributiva <i>Androsace alpina</i> (Bertolli et al., 2024)</p>
                 </div>
             </div>
         </div>
         
         <div class="card" style="margin-top: 25px;">
-            <a href="images/ato_baldo.jpg" class="img-link" target="_blank">
-                <img src="images/ato_baldo.jpg" alt="Ato Baldo" style="height: auto; max-height: 500px;">
-            </a>
+            <img src="images/ato_baldo.jpg" alt="Ato Baldo" style="height: auto; max-height: 500px;">
             <div class="card-content">
                 <p class="caption">Ato Baldo – Hotspots floristici e Mappa di Concentrazione (Kernel Density)</p>
             </div>
@@ -285,6 +271,7 @@
     </section>
 
     <h2 class="section-title">Soluzioni Digitali per il Campo</h2>
+    
     <section class="app-container">
         <div class="app-box">
             <img src="images/rilevaflora.jpg" alt="RilevaFlora">
@@ -301,46 +288,22 @@
         </div>
     </section>
 
-    <h2 class="section-title">Fotografia Macro</h2>
-    <section id="gallery-macro" class="pswp-gallery">
+    <h2 class="section-title">Fotografia macro </h2>
+    
+    <section>
         <div class="grid-visual" style="margin-bottom: 40px;">
-            <div class="card">
-                <a href="images/DSC9268.jpg" class="img-link" target="_blank">
-                    <img src="images/DSC9268.jpg" alt="Cylindromyia">
-                </a>
-                <div class="card-content"><p class="caption">Cylindromyia sp. su Centaurea</p></div>
-            </div>
-            <div class="card">
-                <a href="images/IMG_0411Lamium_maculatum.jpg" class="img-link" target="_blank">
-                    <img src="images/IMG_0411Lamium_maculatum.jpg" alt="Lamium maculatum">
-                </a>
-                <div class="card-content"><p class="caption"><i>Lamium maculatum</i></p></div>
-            </div>
-            <div class="card">
-                <a href="images/Orchis_mascula.jpg" class="img-link" target="_blank">
-                    <img src="images/Orchis_mascula.jpg" alt="Orchis mascula">
-                </a>
-                <div class="card-content"><p class="caption"><i>Orchis mascula</i></p></div>
-            </div>
+            <div class="card"><img src="images/DSC9268.jpg" alt="Cylindromyia"><div class="card-content"><p class="caption">Cylindromyia sp. su Centaurea</p></div></div>
+            <div class="card"><img src="images/IMG_0411Lamium maculatum.jpg" alt="Lamium maculatum"><div class="card-content"><p class="caption"><i>Lamium maculatum</i></p></div></div>
+            <div class="card"><img src="images/Orchis_mascula.jpg" alt="Orchis mascula"><div class="card-content"><p class="caption"><i>Orchis mascula</i></p></div></div>
         </div>
 
-        <h3>Documentazione 360° da drone</h3>
+        <h3> Documentazione 360° da drone</h3>
         <div class="iframe-container">
             <iframe src="https://tomasigiulia.github.io/360tour/" loading="lazy"></iframe>
         </div>
     </section>
 
 </div>
-
-<script type="module">
-import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js';
-const lightbox = new PhotoSwipeLightbox({
-  gallery: '.pswp-gallery',
-  children: 'a.img-link',
-  pswpModule: () => import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.esm.min.js')
-});
-lightbox.init();
-</script>
 
 </body>
 </html>
