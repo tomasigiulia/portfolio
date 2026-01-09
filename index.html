@@ -120,9 +120,8 @@
         /* ===== GRID DELLE IMMAGINI (GIS & FOTO) ===== */
         .grid-visual {
             display: grid;
-            /* Su desktop: 2 colonne ampie per le mappe */
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 30px;
+            gap: 35px;
         }
 
         .card {
@@ -133,6 +132,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
+            margin-bottom: 10px;
         }
 
         .card:hover {
@@ -142,12 +142,17 @@
 
         .card img {
             width: 100%;
-            height: auto; /* Permette all'immagine di mostrare i dettagli */
+            height: auto;
             display: block;
             border-bottom: 1px solid #eee;
         }
 
-        /* Card speciale per le foto macro (più piccole per stare su 3 colonne) */
+        /* Classe per immagini a tutta larghezza */
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* Grid per macro: 3 colonne */
         .grid-macro {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -168,11 +173,6 @@
             font-style: italic;
         }
 
-        /* Sezione Mappa Grande (Ato Baldo) */
-        .full-width {
-            grid-column: 1 / -1;
-        }
-
         /* ===== SEZIONE APP ===== */
         .app-container {
             display: grid;
@@ -189,9 +189,7 @@
             transition: border 0.3s;
         }
 
-        .app-box:hover {
-            border-color: var(--accent);
-        }
+        .app-box:hover { border-color: var(--accent); }
 
         .app-box img {
             width: 90px;
@@ -282,16 +280,16 @@
         </div>
 
         <div class="card full-width">
-            <img src="images/ato_baldo.jpg" alt="Ato Baldo">
-            <div class="card-content">
-                <p class="caption">Ato Baldo – Hotspots floristici e Mappa di Concentrazione (Kernel Density)</p>
-            </div>
-        </div>
-
-        <div class="card">
             <img src="images/Androsace_alpina.jpg" alt="Androsace alpina">
             <div class="card-content">
                 <p class="caption">Mappa distributiva <i>Androsace alpina</i> (Bertolli et al., 2024)</p>
+            </div>
+        </div>
+
+        <div class="card full-width">
+            <img src="images/ato_baldo.jpg" alt="Ato Baldo">
+            <div class="card-content">
+                <p class="caption">Ato Baldo – Hotspots floristici e Mappa di Concentrazione (Kernel Density)</p>
             </div>
         </div>
     </section>
